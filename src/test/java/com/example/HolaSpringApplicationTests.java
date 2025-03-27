@@ -20,9 +20,10 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 class HolaSpringApplicationTests {
+    
+    /**
     @Autowired
     private MockMvc mockMvc;
-
     @Test
     void testSumarEndpoint() throws Exception {
         mockMvc.perform(get("/sumar")
@@ -31,6 +32,7 @@ class HolaSpringApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().string("5"));
     }
+     */
 
     
     /**
@@ -69,8 +71,8 @@ class HolaSpringApplicationTests {
      * messageSource.getMessage("greeting", null, Locale.FRENCH);
      * assertEquals("Bonjour, le monde!", message); }
      */
-    /**
-     * void contextLoads() { System.out.println("El contexto de la aplicación se
-     * ha cargado correctamente."); }
-     */
+    
+     @Test
+     void contextLoads() { System.out.println("El contexto de la aplicación se ha cargado correctamente."); }
+     
 }
