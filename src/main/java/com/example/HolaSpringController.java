@@ -18,22 +18,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RestController
 @Slf4j
 public class HolaSpringController {
-    /**
-     * Metodo Prueba de integracion de internacionalizacion.
-     * 
-    */
-    @GetMapping("/")
-      public String comienzo() {
-      return "Hola Mundo en Spring";
-      }
-     
-    /**
-     * Metodo Prueba de integracion de prueba 
-     * verificación de interacción entre un controlador REST y el servicio de la
-     * aplicación..
-     *
-     * @Autowired private HolaSpringApplication holaSpringApplication;
-     * @GetMapping("/sumar") public int sumar(@RequestParam int a, @RequestParam
-     * int b){ return holaSpringApplication.sumar(a, b); }
-     */   
+    
+    //Configuracion por default.
+    /**@GetMapping("/")
+    public String comienzo() {
+        return "Hola Mundo en Spring";
+    }
+    */ 
+    //Metodo Prueba de integracion de prueba verificación de interacción entre un controlador REST y el servicio de la aplicación.
+    @Autowired
+    private HolaSpringApplication holaSpringApplication;
+
+    @GetMapping("/sumar")
+    public int sumar(@RequestParam int a, @RequestParam int b) {
+        return holaSpringApplication.sumar(a, b);
+    }
+        
 }
