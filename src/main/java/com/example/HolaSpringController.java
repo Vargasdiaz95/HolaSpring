@@ -20,11 +20,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class HolaSpringController {
     
     //Configuracion por default.
-    /**@GetMapping("/")
+    @GetMapping("/")
     public String comienzo() {
         return "Hola Mundo en Spring";
     }
-    */ 
+    
+    /**    
     //Metodo Prueba de integracion de prueba verificación de interacción entre un controlador REST y el servicio de la aplicación.
     @Autowired
     private HolaSpringApplication holaSpringApplication;
@@ -33,5 +34,6 @@ public class HolaSpringController {
     public int sumar(@RequestParam int a, @RequestParam int b) {
         return holaSpringApplication.sumar(a, b);
     }
+    */
         
 }
